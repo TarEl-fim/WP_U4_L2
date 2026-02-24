@@ -2,10 +2,9 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: cadetblue;
+  background-color: green;
   min-height: 98vh;
 }
-
 .invisi{
   display: flex;
   justify-content: center;
@@ -15,7 +14,7 @@ body{
 
 .key{
   display: flex;
-  border: solid black 2px;
+  border: solid;
   justify-content: center;
   justify-self: center;
   align-items: center;
@@ -40,6 +39,9 @@ body{
     word-break: break-all;
     min-height: 24px;
     white-space: pre;
+}
+.key,#Submit,#Input,#Output{
+    border-color: rgb(4, 173, 229);
 }
 p,h1,h2,h3,#Input,#Output{
     text-align: center;
