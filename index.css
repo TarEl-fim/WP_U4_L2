@@ -49,6 +49,10 @@ body{
     min-height: 33px;
     white-space: pre;
 }
+img{
+    width: 10%;
+    align-self: center;
+}
 .key,#Submit,#Input,#Output{
     border-color: rgb(4, 173, 229);
 }
