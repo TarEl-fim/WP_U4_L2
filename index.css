@@ -4,6 +4,8 @@ body{
   justify-content: center;
   background-color: green;
   min-height: 98vh;
+  font-size: x-large;
+  color: yellow;
 }
 .invisi{
   display: flex;
@@ -23,7 +25,6 @@ body{
   margin: 5px;
   border-radius: 15px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: larger;
 }
 #Space{
     width: 350px;
@@ -37,7 +38,7 @@ body{
 #Input,#Output{
     border: solid;
     word-break: break-all;
-    min-height: 24px;
+    min-height: 33px;
     white-space: pre;
 }
 .key,#Submit,#Input,#Output{
