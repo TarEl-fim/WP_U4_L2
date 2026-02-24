@@ -2,6 +2,8 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: cadetblue;
+  min-height: 100vh;
 }
 
 .invisi{
@@ -15,6 +17,7 @@ body{
   display: flex;
   border: solid black 2px;
   justify-content: center;
+  justify-self: center;
   align-items: center;
   height: 60px;
   width: 60px;
@@ -23,6 +26,24 @@ body{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: larger;
 }
+#Space{
+    width: 350px;
+}
+#Submit{
+    min-width: 25%;
+}
+#Submit,#Input,#Output{
+    margin: 1%;
+}
+#Input,#Output{
+    border: solid;
+    word-break: break-all;
+    min-height: 24px;
+    white-space: pre;
+}
+p,h1,h2,h3,#Input,#Output{
+    text-align: center;
+}
 #sdp{
-  align-self: flex-end;
+  justify-self: flex-end;
 }
