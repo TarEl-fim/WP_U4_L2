@@ -31,12 +31,14 @@ body{
   margin: 5px;
   border-radius: 15px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
 }
 #Space{
     width: 350px;
 }
 #Submit{
     min-width: 25%;
+    text-transform: capitalize;
 }
 #Submit,#Input,#Output{
     margin: 1%;
