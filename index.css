@@ -1,0 +1,28 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.invisi{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.key{
+  display: flex;
+  border: solid black 2px;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  margin: 5px;
+  border-radius: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+}
+#sdp{
+  align-self: flex-end;
+}
