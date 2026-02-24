@@ -1,3 +1,63 @@
+//Main code run when page first opened VV
+
+const body = document.getElementsByTagName('body')[0];
+
+console.log(body);
+
+const phrase = choose_Phrase();
+const encodedPhrase = encode_Phrase(phrase);
+
+body.appendChild(encodedPhrase);
+
+function choose_Phrase(){
+    phrases = [
+  "Cumberland Perry Area Career and Technical Center","one little happy star","forgot a colon",
+  "where did you come from","where did you go","syntax error","five hundred miles","do not stop me now", 
+  "because I am having a good time","the rats go to a nice farm","Good idea","from random import choice", 
+  "video killed the radio star","lines of code","The class has two birds","mint count",
+  "list index out of range","the quiet game","flag on the white board","power of love","is this the fifties", 
+  "here it is","mark as complete","tell me why","Sphinx of Black Quartz Judge My Vow"
+  ]
+
+  return phrases[Math.floor(Math.random() * phrases.length)]
+}
+
+
+//encoded phrase index is twice the amount of normal
+//to replace it, encoded[phrase.indexof(letter)*2] = letter
+//Access id 
+
+function encode_Phrase(phrase){
+
+    const encodedPhrase = document.createElement('div');
+    encodedPhrase.id = 'textBox';
+    for(i=0;i<phrase.length;i++){
+        letter = phrase[i]
+        if(letter != ' '){
+            letter = letter.toLowerCase();
+            encodedLetter = ' '
+            const letterdiv = document.createElement('div');
+            letterdiv.classList.add('letter');
+            letterdiv.classList.add('letterSpace');
+
+            letterdiv.id = letter;
+            letterdiv.textContent = encodedLetter;
+            encodedPhrase.appendChild(letterdiv);
+        }else{
+            const letterdiv = document.createElement('div');
+            letterdiv.classList.add('letterSpace');
+
+            letterdiv.id = letter;
+            letterdiv.textContent = letter;  
+            encodedPhrase.appendChild(letterdiv);
+        }
+
+        
+    }
+
+    return encodedPhrase;
+}
+
 
 function genKeyboard(){  
   const body = document.getElementsByTagName('body')[0];
