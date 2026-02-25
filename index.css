@@ -7,14 +7,12 @@ body{
   font-size: x-large;
   color: yellow;
 }
-
 img{
-    height: 200px;
-    width: 900px;
+    height: 21vh;
+    width: auto;
     margin: 2%;
+    align-self: center;
 }
-
-
 .invisi{
   display: flex;
   justify-content: center;
@@ -41,11 +39,10 @@ img{
   justify-content: center;
   justify-self: center;
   align-items: center;
-  height: 5vh;
+  height: 4vh;
   aspect-ratio: 1;
   min-height: 30px;
   margin: 0.4vh;
-  border-radius: 15px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
 }
@@ -54,10 +51,9 @@ img{
     aspect-ratio: 6;
 }
 #Submit{
-    min-width: 25%;
+    min-width: 80px;
+    width: 10%;
     text-transform: capitalize;
-}
-#Submit{
     margin: 1.5%;
 }
 #Input{
@@ -65,15 +61,21 @@ img{
     word-break: break-all;
     min-height: 33px;
     white-space: pre;
+    justify-self: center;
+    min-width: 10%;
     margin: 1.5%;
 }
-img{
-    width: 10%;
+#rules{
+    width: 7%;
+    height: auto;
     align-self: center;
     margin: 1%;
 }
 .key,#Submit,#Input{
     border-color: rgb(4, 173, 229);
+}
+h3{
+    font-size: 2.1vh;
 }
 h1,h3{
     margin: -1px;
@@ -83,5 +85,6 @@ p,h1,h2,h3,#Input{
 }
 #sdp{
   justify-self: flex-end;
+  height: 27px;
   margin: 1%;
 }
