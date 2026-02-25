@@ -2,7 +2,6 @@
 
 const body = document.getElementsByTagName('body')[0];
 
-
 let typeIndex = 0;
 
 const phrase = choose_Phrase();
@@ -30,9 +29,6 @@ function choose_Phrase(){
 }
 
 
-//encoded phrase index is twice the amount of normal
-//to replace it, encoded[phrase.indexof(letter)*2] = letter
-//Access id 
 
 function encode_Phrase(phrase){
 
@@ -80,6 +76,9 @@ function genKeyboard(){
   const SubmitKey = CreateKey('Submit');
   div2.appendChild(SubmitKey);
 
+  const backspace = CreateKey('Backspace');
+  div2.appendChild(backspace);
+
   body.appendChild(div1);
   body.appendChild(div2);
 
@@ -100,13 +99,6 @@ function genKeyboard(){
     }
     counter += 1;
   }
-  const invisDiv = document.createElement('div');
-  invisDiv.className = 'invisi';
-  
-  body.appendChild(invisDiv);
-  SpaceBar = CreateKey(' ');
-  SpaceBar.id = 'Space';
-  invisDiv.appendChild(SpaceBar);
 }
 
 
@@ -115,12 +107,17 @@ function genKeyboard(){
 
 function click(id){
   if (id=='Submit'){
+    const Inp = document.getElementById('Input');
     const hangman = document.getElementsByTagName('img')[1];
     hangman.src = "resources/index/hangman 1.png";
     hangman.alt = alt="Hanging man";
-  }else{
-    console.log(id);
+  }else if(id=='Backspace'){
     const Inp = document.getElementById('Input');
+    Inp.textContent = '';
+  }else{
+    const Inp = document.getElementById('Input')
+
+    console.log(id);
     Inp.textContent += id;
   }
 }
