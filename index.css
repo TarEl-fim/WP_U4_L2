@@ -13,9 +13,16 @@ body{
   align-items: center;
   flex-direction: row;
 }
+#textBox{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
 .letterSpace{
-    width: 70px;
-    height: 70px;
+    min-height: 40px;
+    height: 1vw;
+    aspect-ratio: 1;
 }
 .letter{
     border: solid;
@@ -26,15 +33,17 @@ body{
   justify-content: center;
   justify-self: center;
   align-items: center;
-  height: 60px;
-  width: 60px;
-  margin: 5px;
+  height: 5vh;
+  aspect-ratio: 1;
+  min-height: 27px;
+  margin: 0.4vh;
   border-radius: 15px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
 }
 #Space{
-    width: 350px;
+    width: 25vh;
+    aspect-ratio: 5;
 }
 #Submit{
     min-width: 25%;
