@@ -18,7 +18,7 @@ body{
     height: 70px;
 }
 .letter{
-    border: black;
+    border: solid;
 }
 .key{
   display: flex;
