@@ -18,6 +18,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: row;
+    margin: 1%;
 }
 .letterSpace{
     min-height: 40px;
@@ -35,14 +36,14 @@ body{
   align-items: center;
   height: 5vh;
   aspect-ratio: 1;
-  min-height: 27px;
+  min-height: 30px;
   margin: 0.4vh;
   border-radius: 15px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
 }
 #Space{
-    width: 25vh;
+    width: 30vh;
     aspect-ratio: 5;
 }
 #Submit{
@@ -50,7 +51,7 @@ body{
     text-transform: capitalize;
 }
 #Submit,#Input,#Output{
-    margin: 1%;
+    margin: 0.5%;
 }
 #Input,#Output{
     border: solid;
