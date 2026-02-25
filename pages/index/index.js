@@ -48,10 +48,9 @@ function encode_Phrase(phrase){
             letterdiv.classList.add('letterSpace');
 
             letterdiv.id = letter;
-            letterdiv.textContent = letter;  
+            letterdiv.textContent = letterdiv.id;  
             encodedPhrase.appendChild(letterdiv);
         }
-
         
     }
 
