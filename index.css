@@ -7,6 +7,14 @@ body{
   font-size: x-large;
   color: yellow;
 }
+
+img{
+    height: 200px;
+    width: 900px;
+    margin: 2%;
+}
+
+
 .invisi{
   display: flex;
   justify-content: center;

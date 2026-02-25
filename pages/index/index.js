@@ -9,9 +9,7 @@ const phrase = choose_Phrase();
 const encodedPhrase = encode_Phrase(phrase);
 
 const hangman = document.createElement('imageContainer');
-hangman.innerHTML = '<img src="resources/index/hangman 0.png" alt="Hanging man">';
-hangman.style.height = '100px';
-hangman.style.width = '90px';
+body.innerHTML += '<img src="resources/index/hangman 0.png" alt="Hanging man">';
 
 body.appendChild(hangman);
 
@@ -79,8 +77,8 @@ function genKeyboard(){
   InputBox.id = 'Input';
   div2.appendChild(InputBox);
 
-  //const SubmitKey = CreateKey('Submit');
-  //div2.appendChild(SubmitKey);
+  const SubmitKey = CreateKey('Submit');
+  div2.appendChild(SubmitKey);
 
   body.appendChild(div1);
   body.appendChild(div2);
@@ -117,6 +115,9 @@ function genKeyboard(){
 
 function click(id){
   if (id=='Submit'){
+    const hangman = document.getElementsByTagName('img')[1];
+    hangman.src = "resources/index/hangman 1.png";
+    hangman.alt = alt="Hanging man";
   }else{
     console.log(id);
     const Inp = document.getElementById('Input');
