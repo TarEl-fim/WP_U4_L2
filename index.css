@@ -43,8 +43,8 @@ body{
   text-transform: uppercase;
 }
 #Space{
-    width: 30vh;
-    aspect-ratio: 5;
+    height: 5vh;
+    width: 15vw;
 }
 #Submit{
     min-width: 25%;
