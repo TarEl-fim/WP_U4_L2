@@ -44,16 +44,16 @@ body{
 }
 #Space{
     height: 5vh;
-    width: 15vw;
+    aspect-ratio: 6;
 }
 #Submit{
     min-width: 25%;
     text-transform: capitalize;
 }
-#Submit,#Input,#Output{
+#Submit,#Input{
     margin: 0.5%;
 }
-#Input,#Output{
+#Input{
     border: solid;
     word-break: break-all;
     min-height: 33px;
@@ -63,10 +63,10 @@ img{
     width: 10%;
     align-self: center;
 }
-.key,#Submit,#Input,#Output{
+.key,#Submit,#Input{
     border-color: rgb(4, 173, 229);
 }
-p,h1,h2,h3,#Input,#Output{
+p,h1,h2,h3,#Input{
     text-align: center;
 }
 #sdp{
