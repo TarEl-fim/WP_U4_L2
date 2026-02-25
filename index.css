@@ -71,4 +71,5 @@ p,h1,h2,h3,#Input,#Output{
 }
 #sdp{
   justify-self: flex-end;
+  margin: -1px;
 }
