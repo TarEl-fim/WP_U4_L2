@@ -21,8 +21,7 @@ body{
     margin: 1%;
 }
 .letterSpace{
-    min-height: 40px;
-    height: 1vw;
+    height: 3.1vh;
     aspect-ratio: 1;
 }
 .letter{
@@ -50,14 +49,15 @@ body{
     min-width: 25%;
     text-transform: capitalize;
 }
-#Submit,#Input{
-    margin: 0.5%;
+#Submit,#Space{
+    margin: 1%;
 }
 #Input{
     border: solid;
     word-break: break-all;
     min-height: 33px;
     white-space: pre;
+    margin: 1.5%;
 }
 img{
     width: 10%;
