@@ -18,11 +18,10 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin: 1%;
+    margin: -1px;
 }
 .letterSpace{
-    min-height: 40px;
-    height: 1vw;
+    height: 3.1vh;
     aspect-ratio: 1;
 }
 .letter{
@@ -44,29 +43,33 @@ body{
 }
 #Space{
     height: 5vh;
-    width: 15vw;
+    aspect-ratio: 6;
 }
 #Submit{
     min-width: 25%;
     text-transform: capitalize;
 }
-#Submit,#Input,#Output{
-    margin: 0.5%;
+#Submit,#Space{
+    margin: 1%;
 }
-#Input,#Output{
+#Input{
     border: solid;
     word-break: break-all;
     min-height: 33px;
     white-space: pre;
+    margin: 1.5%;
 }
 img{
     width: 10%;
     align-self: center;
 }
-.key,#Submit,#Input,#Output{
+.key,#Submit,#Input{
     border-color: rgb(4, 173, 229);
 }
-p,h1,h2,h3,#Input,#Output{
+h3{
+    margin: -1pxs;
+}
+p,h1,h2,h3,#Input{
     text-align: center;
 }
 #sdp{
