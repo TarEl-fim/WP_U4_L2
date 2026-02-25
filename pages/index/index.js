@@ -2,12 +2,21 @@
 
 const body = document.getElementsByTagName('body')[0];
 
-console.log(body);
+
+let typeIndex = 0;
 
 const phrase = choose_Phrase();
 const encodedPhrase = encode_Phrase(phrase);
 
+const hangman = document.createElement('imageContainer');
+hangman.innerHTML = '<img src="resources/index/hangman 0.png" alt="Hanging man">';
+hangman.style.height = '100px';
+hangman.style.width = '90px';
+
+body.appendChild(hangman);
+
 body.appendChild(encodedPhrase);
+
 
 function choose_Phrase(){
     phrases = [
@@ -57,7 +66,6 @@ function encode_Phrase(phrase){
     return encodedPhrase;
 }
 
-
 function genKeyboard(){  
   const body = document.getElementsByTagName('body')[0];
 
@@ -66,17 +74,13 @@ function genKeyboard(){
   div1.id = 'box1';
   div2.id = 'box2';
 
-  const OutputBox = document.createElement('div');
-  OutputBox.id = 'Output';
-  div1.appendChild(OutputBox);
-
   const InputBox = document.createElement('div');
 
   InputBox.id = 'Input';
   div2.appendChild(InputBox);
 
-  const SubmitKey = CreateKey('Submit');
-  div2.appendChild(SubmitKey);
+  //const SubmitKey = CreateKey('Submit');
+  //div2.appendChild(SubmitKey);
 
   body.appendChild(div1);
   body.appendChild(div2);
@@ -107,18 +111,19 @@ function genKeyboard(){
   invisDiv.appendChild(SpaceBar);
 }
 
+
+//0 = whole body
+//5 = head left
+
 function click(id){
   if (id=='Submit'){
-    const Out = document.getElementById('Output');
-    const Inp = document.getElementById('Input');
-    Out.textContent += Inp.textContent + '\n';
-    Inp.textContent = '';
   }else{
     console.log(id);
     const Inp = document.getElementById('Input');
     Inp.textContent += id;
   }
 }
+
 
 function CreateKey(letter){
   const key = document.createElement('div');
