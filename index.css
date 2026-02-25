@@ -57,8 +57,8 @@ img{
     min-width: 25%;
     text-transform: capitalize;
 }
-#Submit,#Space{
-    margin: 1%;
+#Submit{
+    margin: 1.5%;
 }
 #Input{
     border: solid;
@@ -70,17 +70,18 @@ img{
 img{
     width: 10%;
     align-self: center;
+    margin: 1%;
 }
 .key,#Submit,#Input{
     border-color: rgb(4, 173, 229);
 }
-h3{
-    margin: -1pxs;
+h1,h3{
+    margin: -1px;
 }
 p,h1,h2,h3,#Input{
     text-align: center;
 }
 #sdp{
   justify-self: flex-end;
-  margin: -1px;
+  margin: 1%;
 }
