@@ -45,24 +45,37 @@ img{
   margin: 0.4vh;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
+  user-select: none;
+  
 }
 .key:hover{
     background-color: darkgreen;
     cursor: pointer;
+    height: 5vh;
+}
+#Submit{
+    min-width: 80px;
+}
+#Backspace{
+    min-width: 120px;
 }
 #Submit,#Backspace{
-    min-width: 80px;
-    width: 10%;
+    aspect-ratio: 5;
     text-transform: capitalize;
-    margin: 1.5%;
+    margin: 0.2%;
+    min-height: 33px;
 }
 #Input{
     border: solid;
+    aspect-ratio: 5;
     word-break: break-all;
     min-height: 33px;
     justify-self: center;
     min-width: 10%;
     margin: 1.5%;
+}
+#Input,.letter{
+    cursor: not-allowed;
 }
 #rules{
     width: 7%;
