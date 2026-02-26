@@ -48,6 +48,7 @@ img{
 }
 .key:hover{
     background-color: darkgreen;
+    cursor: pointer;
 }
 #Submit,#Backspace{
     min-width: 80px;
@@ -84,5 +85,5 @@ p,h1,h2,h3,#Input{
 #sdp{
   justify-self: flex-end;
   height: 27px;
-  margin: 1%;
+  margin: -1px;
 }
