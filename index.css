@@ -18,6 +18,7 @@ img{
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  align-self: center;
 }
 #textBox{
     max-width: 100%;
@@ -46,12 +47,16 @@ img{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
   user-select: none;
-  
 }
 .key:hover{
     background-color: darkgreen;
     cursor: pointer;
     height: 5vh;
+    margin: -1px;
+}
+#Submit:hover,#Backspace:hover{
+    aspect-ratio: 4;
+    margin: 0px;
 }
 #Submit{
     min-width: 80px;
@@ -62,7 +67,7 @@ img{
 #Submit,#Backspace{
     aspect-ratio: 5;
     text-transform: capitalize;
-    margin: 0.2%;
+    margin: 0.5%;
     min-height: 33px;
 }
 #Input{
@@ -86,13 +91,13 @@ img{
 .key,#Submit,#Input{
     border-color: rgb(4, 173, 229);
 }
-h3{
+h2{
     font-size: 2.1vh;
 }
-h1,h3{
+h1,h2{
     margin: -1px;
 }
-p,h1,h2,h3,#Input{
+p,h1,h2,#Input{
     text-align: center;
 }
 #sdp{
