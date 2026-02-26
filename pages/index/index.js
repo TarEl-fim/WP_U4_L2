@@ -131,23 +131,35 @@ function addClick(id){
 
 function checkPhrase(text){
   const Inp = document.getElementById('Input');
-  console.log(text);
-  console.log(phrase);
+  letterFound = false;
   for (let i=0;i<phrase.length;i++){
     if (phrase[i] == text){
-      console.log(encodedPhrase)
+
       encodedPhrase.children[i].textContent = text;
       
       letterCount += 1;
-
-    }else{
-      const hangman = document.getElementsByTagName('img')[1];
-      hangman.src = "resources/index/hangman 1.png";
-      hangman.alt = alt="Hanging man";
-    }
-    
+      letterFound = true;
   }
+}
+  let lost = false;
+
+  if(letterFound == false){
+    if (hangIndex<5){
+      hangIndex += 1;
+    }else{
+      lost = true;
+    }
+    console.log(hangIndex)
+    const hangman = document.getElementsByTagName('img')[1];
+    hangman.src = `resources/index/hangman ${hangIndex}.png`;
+    hangman.alt = alt="Hanging man";
+  }
+
   Inp.textContent = '';
+
+  if(lost || letterCount == phrase.length){
+    endGame()
+  }
   
 }
 
