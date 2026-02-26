@@ -8,7 +8,7 @@ body{
   color: yellow;
 }
 img{
-    height: 17vh;
+    height: 16vh;
     width: auto;
     margin: 2%;
     align-self: center;
@@ -27,6 +27,9 @@ img{
     flex-direction: row;
     margin: -1px;
 }
+#box2{
+    margin: 0%;
+}
 .letterSpace{
     height: 3.1vh;
     aspect-ratio: 1;
@@ -34,6 +37,7 @@ img{
 .letter{
     border: solid;
     text-align: center;
+    min-height: 30px;
 }
 .key{
   display: flex;
@@ -58,7 +62,8 @@ img{
 }
 #Submit:hover,#Backspace:hover,#Reset:hover{
     aspect-ratio: 4;
-    margin: 0px;
+    margin: -1px;
+    padding: -1px;
 }
 #Submit{
     min-width: 80px;
@@ -94,7 +99,10 @@ img{
     border-color: rgb(14, 172, 225);
 }
 h2{
-    font-size: 2.1vh;
+    font-size: calc((2.1vh + 1.1vw) / 2);
+}
+h1{
+    font-size: calc((6vh + 3vw) / 2);
 }
 h1,h2{
     margin: -1px;
