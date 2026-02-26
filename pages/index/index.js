@@ -1,18 +1,26 @@
 //Main code run when page first opened VV
 
-const body = document.getElementsByTagName('body')[0];
+let [hangIndex, phrase, encodedPhrase,letterCount] = reset();
 
-let typeIndex = 0;
+function reset(){
 
-const phrase = choose_Phrase();
-const encodedPhrase = encode_Phrase(phrase);
+  const body = document.getElementsByTagName('body')[0];
 
-const hangman = document.createElement('imageContainer');
-body.innerHTML += '<img src="resources/index/hangman 0.png" alt="Hanging man">';
+  let typeIndex = 0;
 
-body.appendChild(hangman);
+  const phrase = choose_Phrase();
+  const encodedPhrase = encode_Phrase(phrase);
 
-body.appendChild(encodedPhrase);
+  const hangman = document.createElement('imageContainer');
+  body.innerHTML += '<img src="resources/index/hangman 0.png" alt="Hanging man">';
+
+  body.appendChild(hangman);
+
+  body.appendChild(encodedPhrase);
+  let letterCount = 0;
+
+  return [typeIndex,phrase,encodedPhrase,letterCount];
+}
 
 
 function choose_Phrase(){
@@ -25,7 +33,16 @@ function choose_Phrase(){
   "here it is","mark as complete","tell me why","Sphinx of Black Quartz Judge My Vow"
   ]
 
-  return phrases[Math.floor(Math.random() * phrases.length)]
+  const randPhrase = phrases[Math.floor(Math.random() * phrases.length)]
+
+  let newStr = ''
+
+  for(let i=0;i<randPhrase.length;i++){
+    
+    newStr += randPhrase[i].toLowerCase();
+  }
+
+  return newStr
 }
 
 
@@ -99,6 +116,43 @@ function genKeyboard(){
     }
     counter += 1;
   }
+
+  const reset = CreateKey('Reset');
+  div2.appendChild(reset);
+}
+
+function removeClick(id){
+  console.log('penis')
+}
+
+function addClick(id){
+  console.log('penis')
+}
+
+function checkPhrase(text){
+  const Inp = document.getElementById('Input');
+  console.log(text);
+  console.log(phrase);
+  for (let i=0;i<phrase.length;i++){
+    if (phrase[i] == text){
+      console.log(encodedPhrase)
+      encodedPhrase.children[i].textContent = text;
+      
+      letterCount += 1;
+
+    }else{
+      const hangman = document.getElementsByTagName('img')[1];
+      hangman.src = "resources/index/hangman 1.png";
+      hangman.alt = alt="Hanging man";
+    }
+    
+  }
+  Inp.textContent = '';
+  
+}
+
+function endGame(){
+  console.log('yomama')
 }
 
 
@@ -108,20 +162,18 @@ function genKeyboard(){
 function click(id){
   if (id=='Submit'){
     const Inp = document.getElementById('Input');
-    const hangman = document.getElementsByTagName('img')[1];
-    hangman.src = "resources/index/hangman 1.png";
-    hangman.alt = alt="Hanging man";
+    checkPhrase(Inp.textContent);
+    
   }else if(id=='Backspace'){
     const Inp = document.getElementById('Input');
     Inp.textContent = '';
+  }else if(id=='Reset'){
+    reset();
   }else{
     const Inp = document.getElementById('Input')
-
-    console.log(id);
     Inp.textContent += id;
   }
 }
-
 
 function CreateKey(letter){
   const key = document.createElement('div');
