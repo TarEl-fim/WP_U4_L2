@@ -33,6 +33,7 @@ img{
 }
 .letter{
     border: solid;
+    text-align: center;
 }
 .key{
   display: flex;
@@ -43,7 +44,7 @@ img{
   height: 4vh;
   aspect-ratio: 1;
   min-height: 30px;
-  margin: 0.4vh;
+  margin: 0.5vh;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
   user-select: none;
