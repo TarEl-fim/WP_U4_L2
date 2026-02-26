@@ -60,7 +60,6 @@ function encode_Phrase(phrase){
             letterdiv.classList.add('letter');
             letterdiv.classList.add('letterSpace');
 
-            letterdiv.id = letter;
             letterdiv.textContent = encodedLetter;
             encodedPhrase.appendChild(letterdiv);
         }else{
@@ -93,9 +92,6 @@ function genKeyboard(){
   const SubmitKey = CreateKey('Submit');
   div2.appendChild(SubmitKey);
 
-  const backspace = CreateKey('Backspace');
-  div2.appendChild(backspace);
-
   body.appendChild(div1);
   body.appendChild(div2);
 
@@ -121,12 +117,14 @@ function genKeyboard(){
   div2.appendChild(reset);
 }
 
-function removeClick(id){
-  console.log('penis')
-}
-
-function addClick(id){
-  console.log('penis')
+function addClick(){
+  const invisArray = document.getElementsByClassName('invisi');
+  for(let i=0;i<invisArray.length;i++){
+    const keys = invisArray[i].children;
+    for(let j =0;j<keys;j++){
+      keys[j].onclick = function(){click(keys[j].textContent)};
+    }
+  }
 }
 
 function checkPhrase(text){
@@ -139,6 +137,7 @@ function checkPhrase(text){
       
       letterCount += 1;
       letterFound = true;
+      
   }
 }
   let lost = false;
@@ -156,11 +155,13 @@ function checkPhrase(text){
   }
 
   Inp.textContent = '';
-
+  const key = document.getElementById(text);
+  if(key.onclick != null){
+    key.onclick = null;
+  }
   if(lost || letterCount == phrase.length){
     endGame()
   }
-  
 }
 
 function endGame(){
@@ -168,22 +169,19 @@ function endGame(){
 }
 
 
-//0 = whole body
-//5 = head left
-
 function click(id){
   if (id=='Submit'){
     const Inp = document.getElementById('Input');
     checkPhrase(Inp.textContent);
+    addClick();
     
-  }else if(id=='Backspace'){
-    const Inp = document.getElementById('Input');
-    Inp.textContent = '';
   }else if(id=='Reset'){
     reset();
+    addClick();
   }else{
     const Inp = document.getElementById('Input')
-    Inp.textContent += id;
+    Inp.textContent = id;
+    removeClick();
   }
 }
 
