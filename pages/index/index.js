@@ -1,6 +1,6 @@
 //Main code run when page first opened VV
 
-let [hangIndex, phrase, encodedPhrase,letterCount] = reset();
+let [hangIndex, phrase, encodedPhrase, letterCount, phraseLength] = reset();
 
 function reset(){
 
@@ -17,9 +17,12 @@ function reset(){
   body.appendChild(hangman);
 
   body.appendChild(encodedPhrase);
+  let num = phrase.split(' ').length - 1;
+
+  const phraseLength = phrase.length - num;
   let letterCount = 0;
 
-  return [typeIndex,phrase,encodedPhrase,letterCount];
+  return [typeIndex,phrase,encodedPhrase,letterCount,phraseLength];
 }
 
 
@@ -127,17 +130,34 @@ function addClick(){
   }
 }
 
+
+function endGame(lost=false){
+  const body = document.getElementsByTagName('body')[0];
+  const hangman = document.getElementsByTagName('img')[1];
+  const submit = document.getElementById('Submit');
+  const endingText = document.createElement('h3');
+  if (lost==true){
+    endingText.textContent = 'YOU KILLED HIM NOOOOOO';
+  }else{
+    endingText.textContent = 'YOU SAVED HIM YAAAAYY';
+  }
+  body.replaceChild(endingText,hangman);
+
+  submit.onclick = null;
+  
+}
+
 function checkPhrase(text){
   const Inp = document.getElementById('Input');
   letterFound = false;
+  
   for (let i=0;i<phrase.length;i++){
     if (phrase[i] == text){
 
       encodedPhrase.children[i].textContent = text;
-      
       letterCount += 1;
       letterFound = true;
-      
+
   }
 }
   let lost = false;
@@ -148,10 +168,17 @@ function checkPhrase(text){
     }else{
       lost = true;
     }
-    console.log(hangIndex)
-    const hangman = document.getElementsByTagName('img')[1];
-    hangman.src = `resources/index/hangman ${hangIndex}.png`;
-    hangman.alt = alt="Hanging man";
+
+    if (lost==true){
+      console.log('kys')
+      endGame(lost)
+    }else if (letterCount == phraseLength){
+      endGame()
+    }else{
+      const hangman = document.getElementsByTagName('img')[1];
+      hangman.src = `resources/index/hangman ${hangIndex}.png`;
+      hangman.alt = alt="Hanging man";
+    }
   }
 
   Inp.textContent = '';
@@ -162,10 +189,6 @@ function checkPhrase(text){
   if(lost || letterCount == phrase.length){
     endGame()
   }
-}
-
-function endGame(){
-  console.log('yomama')
 }
 
 
@@ -181,7 +204,6 @@ function click(id){
   }else{
     const Inp = document.getElementById('Input')
     Inp.textContent = id;
-    removeClick();
   }
 }
 

@@ -13,6 +13,14 @@ img{
     margin: 2%;
     align-self: center;
 }
+
+h3{
+    font-size: calc((2.1vh + 1.1vw) / 2);
+    height: 16vh;
+    width: auto;
+    margin: 2%;
+    align-self: center;
+}
 .invisi{
   display: flex;
   justify-content: center;
@@ -25,6 +33,7 @@ img{
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     margin: -1px;
 }
 #box2{
@@ -107,7 +116,7 @@ h1{
 h1,h2{
     margin: -1px;
 }
-p,h1,h2,#Input{
+p,h1,h2,h3,#Input{
     text-align: center;
 }
 #sdp{
